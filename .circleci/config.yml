@@ -36,6 +36,12 @@ jobs:
       - run:
           name: run tests
           command: npx codeceptjs run-workers 4
+      - run:
+          name: Generate Report
+          command: |
+            npx allure-commandline generate output
+      - store_artifacts:
+          path: allure-report
 
 workflows:
   version: 2
